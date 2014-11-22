@@ -1,2 +1,2 @@
-#this file specifies what file would not be pushed
+#this is the file to specify what file would not be added to repo
 *~
