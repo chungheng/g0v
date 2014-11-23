@@ -161,7 +161,7 @@ d3.json("tester.json", function(error, root) {
 
 
       text.exit().transition()
-        .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
+        .style("fill-opacity", function(d) { return d.depth === 2 + (root === p) ? 1 : 0; })
         .remove();
     
       text.transition()
