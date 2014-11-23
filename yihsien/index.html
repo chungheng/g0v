@@ -103,26 +103,6 @@ d3.json("tester.json", function(error, root) {
   // Zoom to the specified new root.
   function zoom(root, p) {
     
-    /*
-    text.enter().append("text")
-      .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
-      .attr("x", function(d) {return radius / 3 * d.depth; })
-      .attr("dx", "6") // margin
-      .attr("dy", ".35em") // vertical-align
-      .text(function(d) { return d.name; });
-
-    text.exit().transition()
-      .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
-      .remove();
-    text.transition()
-      .style("fill-opacity", 1)
-      .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
-      .attr("x", function(d) {return radius / 3 * d.depth; })
-      .attr("dx", "6") // margin
-      .attr("dy", ".35em") // vertical-align
-    */
-
-    
     if (document.documentElement.__transition__) return;
 
     // Rescale outside angles to match the new layout.
@@ -130,16 +110,12 @@ d3.json("tester.json", function(error, root) {
         exitArc,
         outsideAngle = d3.scale.linear().domain([0, 2 * Math.PI]);
 
-    
-    
-    
     function insideArc(d) {
       return p.key > d.key
           ? {depth: d.depth - 1, x: 0, dx: 0} : p.key < d.key
           ? {depth: d.depth - 1, x: 2 * Math.PI, dx: 0}
           : {depth: 0, x: 0, dx: 2 * Math.PI};
    
-
         
     }
 
@@ -165,6 +141,25 @@ d3.json("tester.json", function(error, root) {
           .attrTween("d", function(d) { return arcTween.call(this, exitArc(d)); })
           .remove();
 
+      text.enter().append("text")
+        .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+        .attr("x", function(d) {return radius / 3 * d.depth; })
+        .attr("dx", "6") // margin
+        .attr("dy", ".35em") // vertical-align
+        .text(function(d) { return d.name; });
+
+
+      text.exit().transition()
+        .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
+        .remove();
+      text.transition()
+        .style("fill-opacity", 1)
+        .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+        .attr("x", function(d) {return radius / 3 * d.depth; })
+        .attr("dx", "6") // margin
+        .attr("dy", ".35em") // vertical-align
+
+
       path.enter().append("path")
           .style("fill-opacity", function(d) { return d.depth === 2 - (root === p) ? 1 : 0; })
           .style("fill", function(d) { return d.fill; })
@@ -174,6 +169,8 @@ d3.json("tester.json", function(error, root) {
       path.transition()
           .style("fill-opacity", 1)
           .attrTween("d", function(d) { return arcTween.call(this, updateArc(d)); });
+
+
     });
   }
 });
