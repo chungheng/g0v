@@ -1,6 +1,6 @@
 {
 	"name": "B",
-		"children": [
+	"children": [
 		{
 			"name": "JNS", 
 			"children": [
@@ -11,13 +11,14 @@
 		},
 
 	
-	{
-		"name": "JNS2", 
-		"children": [
-		{"name": "昕芸(股)公司", "size": 22000},
-		{"name": "王憲珍", "size": 35000},
-		{"name": "周至明", "size": 18000}
-		]
-	}
+		{
+			"name": "JNS2", 
+			"children": [
+			{"name": "昕芸(股)公司", "size": 22000},
+			{"name": "王憲珍", "size": 35000},
+			{"name": "周至明", "size": 18000}
+			]
+		}
 	]
 }
+
