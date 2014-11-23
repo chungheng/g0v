@@ -134,6 +134,16 @@ d3.json("tester.json", function(error, root) {
     // When zooming out, arcs enter from the inside and exit to the outside.
     // Exiting outside arcs transition to the new layout.
     if (root !== p) enterArc = insideArc, exitArc = outsideArc, outsideAngle.range([p.x, p.x + p.dx]);
+    
+    text.exit().transition()
+      .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
+      .remove();
+    text.transition()
+      .style("fill-opacity", 1)
+      .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+      .attr("x", function(d) {return radius / 3 * d.depth; })
+      .attr("dx", "6") // margin
+      .attr("dy", ".35em") // vertical-align
 
     d3.transition().duration(d3.event.altKey ? 7500 : 750).each(function() {
       path.exit().transition()
@@ -151,28 +161,6 @@ d3.json("tester.json", function(error, root) {
       path.transition()
           .style("fill-opacity", 1)
           .attrTween("d", function(d) { return arcTween.call(this, updateArc(d)); });
-
-      text.exit().transition()
-          .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
-          .remove();
-
-      
-      text.enter().append("text")
-          .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
-          .attr("x", function(d) {return radius / 3 * d.depth; })
-          .attr("dx", "6") // margin
-          .attr("dy", ".35em") // vertical-align
-          .text(function(d) { return d.name; });
-
-
-          
-      text.transition()
-          .style("fill-opacity", 1)
-          .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
-          .attr("x", function(d) {return radius / 3 * d.depth; })
-          .attr("dx", "6") // margin
-          .attr("dy", ".35em") // vertical-align
-      
 
 
     });
