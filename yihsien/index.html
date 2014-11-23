@@ -114,6 +114,26 @@ d3.json("tester.json", function(error, root) {
           ? {depth: d.depth - 1, x: 0, dx: 0} : p.key < d.key
           ? {depth: d.depth - 1, x: 2 * Math.PI, dx: 0}
           : {depth: 0, x: 0, dx: 2 * Math.PI};
+   
+
+    text.enter().append("text")
+      .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+      .attr("x", function(d) {return radius / 3 * d.depth; })
+      .attr("dx", "6") // margin
+      .attr("dy", ".35em") // vertical-align
+      .text(function(d) { return d.name; });
+
+    text.exit().transition()
+      .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
+      .remove();
+    text.transition()
+      .style("fill-opacity", 1)
+      .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+      .attr("x", function(d) {return radius / 3 * d.depth; })
+      .attr("dx", "6") // margin
+      .attr("dy", ".35em") // vertical-align
+    
+    
     }
 
     function outsideArc(d) {
