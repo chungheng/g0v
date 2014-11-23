@@ -5,17 +5,21 @@ var radius = Math.min(width, height) / 2;
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 var b = {
-  w: 100, h: 30, s: 3, t: 10
+  w: 120, h: 30, s: 3, t: 10
 };
 
 // Mapping of step names to colors.
 var colors = {
-  "home": "#5687d1",
-  "product": "#7b615c",
-  "search": "#de783b",
-  "account": "#6ab975",
-  "other": "#a173d1",
-  "end": "#bbbbbb"
+  "1": "#3366CC",
+  "2": "#DC3912",
+  "3": "#FF9900",
+  "4": "#109618",
+  "5": "#990099",
+  "6": "#00FFFF",
+  "7": "#FF69B4",
+  "8": "#FFD700",
+  "9": "#00FF00",
+  "10": "#9370DB"
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -72,7 +76,7 @@ function createVisualization(json) {
       .attr("display", function(d) { return d.depth ? null : "none"; })
       .attr("d", arc)
       .attr("fill-rule", "evenodd")
-      .style("fill", function(d) { return colors[d.name]; })
+      .style("fill", function(d) { return colors[(d.value + Math.floor(Math.random() * 6) + 1 )%10]; })
       .style("opacity", 1)
       .on("mouseover", mouseover);
 
