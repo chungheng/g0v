@@ -6,7 +6,8 @@ body{
 	margin:100px auto;
 }
 svg text{
-	font-size:12px;
+	font-size:15px;
+    font-family: Heiti TC;
 }
 rect{
 	shape-rendering:crispEdges;
@@ -101,6 +102,8 @@ var in_data=[
 ['羅明才','匿名捐贈',20100],
 ['羅明才','政黨捐贈收入',3000000],
 ['羅明才','營利事業捐贈收入',10070000],
+['蔡正元','個人捐贈收入',3601650],     
+['蔡正元','營利事業捐贈收入',7039600],
 ['蔡錦隆','',10000],
 ['蔡錦隆','人民團體捐贈收入',206000],
 ['蔡錦隆','個人捐贈收入',8761400],
@@ -343,7 +346,7 @@ var out_data=[
 
 ];
 
-var width = 1000, height = 610, margin ={b:0, t:40, l:170, r:50};
+var width = 800, height = 610, margin ={b:0, t:40, l:170, r:50};
 
 var svg = d3.select("body")
 	.append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
