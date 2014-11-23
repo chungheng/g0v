@@ -197,7 +197,7 @@ function arcTween(b) {
 }
 
 function computeTextRotation(d) {
-  return 0;//(d.x + (d.dx)/2) * 180 / Math.PI - 90;
+  return (d.x + (d.dx)/2) * 360 / Math.PI - 90;
 }
 
 
