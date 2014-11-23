@@ -102,13 +102,6 @@ d3.json("tester.json", function(error, root) {
 
   // Zoom to the specified new root.
   function zoom(root, p) {
-    if (document.documentElement.__transition__) return;
-
-    // Rescale outside angles to match the new layout.
-    var enterArc,
-        exitArc,
-        outsideAngle = d3.scale.linear().domain([0, 2 * Math.PI]);
-
     
     text.enter().append("text")
       .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
@@ -128,6 +121,16 @@ d3.json("tester.json", function(error, root) {
       .attr("dy", ".35em") // vertical-align
     
 
+    
+    if (document.documentElement.__transition__) return;
+
+    // Rescale outside angles to match the new layout.
+    var enterArc,
+        exitArc,
+        outsideAngle = d3.scale.linear().domain([0, 2 * Math.PI]);
+
+    
+    
     
     function insideArc(d) {
       return p.key > d.key
