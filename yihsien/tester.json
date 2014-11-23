@@ -6,5 +6,9 @@
     "children": [
     {"name": "捐贈者", "size": 1234}
     ]
+  },
+  { "name": "whatever",
+    "size": 20
   }
+  ]
 }
