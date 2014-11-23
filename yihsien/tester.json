@@ -2,17 +2,17 @@
   "name": "丁守中",
   "children": [
   {
-    "name": "政治獻金",
+    "name": "政治獻金", "size": 30,
     "children": [
     {
-      "name": "中華電信",
+      "name": "中華電信", "size": 20,
       "children": [
       {"name": "2013: 1500000", "size": 22 },
       {"name": "2014: 1800000", "size": 28 }
       ]
     },
     {
-      "name": "統一集團",
+      "name": "統一集團", "size": 25,
       "children": [
       {"name": "1340000", "size": 15},
       {"name": "800000", "size": 9},
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "name": "選舉支出",
+    "name": "選舉支出", "size": 10,
     "children": [
     {"name": "宣傳", "size": 20},
     {"name": "辦公器材", "size": 10}
