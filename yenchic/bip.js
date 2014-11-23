@@ -2,9 +2,9 @@
 	var bP={};	
 	var b=40, bb=240, height=600, buffMargin=1, minHeight=14;
 //	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140];
-    var c1=[-130, 60], c2=[-10, 220], c3=[-10, 240];
+    var c1=[-130, 60], c2=[-10, 270], c3=[-10, 280];
     //Column positions of labels.
-	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#00FFFF","#FF69B4", "#FFD700","#00FF00", "#9370DB" ];
+	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#87C3C7","#FF69B4", "#F7BD34 ","#7C845D", "#9370DB" ];
 	
 	bP.partData = function(data,p){
 		var sData={};
@@ -256,7 +256,7 @@
 				.selectAll(".mainbar").filter(function(d,i){ return (i==s);});
 			
 			selectedBar.select(".mainrect").style("stroke-opacity",1);			
-			selectedBar.select(".barlabel").style('font-weight','bold');
+			selectedBar.select(".barlabel").style('font-weight','bold' );
 			selectedBar.select(".barvalue").style('font-weight','bold');
 			selectedBar.select(".barpercent").style('font-weight','bold');
 		});
