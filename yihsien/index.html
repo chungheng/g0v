@@ -176,14 +176,6 @@ d3.json("tester.json", function(error, root) {
 
     });
 
-    text.enter().append("text")
-      .enter().append("text")
-      .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
-      .attr("x", function(d) {return radius / 3 * d.depth; })
-      .attr("dx", "6") // margin
-      .attr("dy", ".35em") // vertical-align
-      .html(function(d) { return d.name; });
-
   }
 });
 
