@@ -68,7 +68,7 @@ var in_data=[
 ['王惠美','匿名捐贈',53681],
 ['王惠美','政黨捐贈收入',5000000],
 ['王惠美','營利事業捐贈收入',12244800],
-['王進士','',100000],
+['王進士','不明收入',100000],
 ['王進士','人民團體捐贈收入',10000],
 ['王進士','人民團體捐贈收入',636000],
 ['王進士','個人捐贈收入',6883600],
@@ -83,7 +83,9 @@ var in_data=[
 ['羅明才','匿名捐贈',20100],
 ['羅明才','政黨捐贈收入',3000000],
 ['羅明才','營利事業捐贈收入',10070000],
-['蔡錦隆','',10000],
+['蔡正元','個人捐贈收入',3601650],     
+['蔡正元','營利事業捐贈收入',7039600],
+['蔡錦隆','不明收入',10000],
 ['蔡錦隆','人民團體捐贈收入',206000],
 ['蔡錦隆','個人捐贈收入',8761400],
 ['蔡錦隆','其他收入',879],
@@ -205,7 +207,7 @@ var out_data=[
 ['楊瓊瓔','集會支出',3191394],
 ['楊瓊瓔','雜支支出',12700],
 ['楊瓊瓔','雜支支出',4325353],
-['江惠貞','',143550],
+['江惠貞','不明支出',143550],
 ['江惠貞','交通旅運支出',14499],
 ['江惠貞','人事費用支出',775000],
 ['江惠貞','公共關係費用支出',333754],
@@ -328,13 +330,14 @@ var out_data=[
 var width = 800, height = 610, margin ={b:0, t:40, l:170, r:50};
 
 var svg = d3.select("div#bipart-1")
+	.append("svg").attr('width',width).attr('height',(height+margin.b+margin.t)).attr('align','center')
+	.append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
+
+var svg2 = d3.select("div#bipart-1")
 	.append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
 	.append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
 
-var svg2 = d3.select("div#bipart-2")
-	.append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
-	.append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
-
+    
 var data = [ 
     {data:bP.partData(in_data,2), id:'收入', header:["立法委員","收入項目", "收入"]},
 	//{data:bP.partData(out_data,2), id:'支出', header:["立法委員","支出項目", "支出"]},
@@ -345,4 +348,6 @@ var data2 = [
 	//{data:bP.partData(sales_data,3), id:'Sales', header:["Channel","State", "Sales"]}
 ];
 
+    
+bP.draw(data, svg);
 bP.draw(data2, svg2);
