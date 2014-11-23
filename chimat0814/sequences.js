@@ -5,7 +5,7 @@ var radius = Math.min(width, height) / 2;
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 var b = {
-  w: 75, h: 30, s: 3, t: 10
+  w: 100, h: 30, s: 3, t: 10
 };
 
 // Mapping of step names to colors.
@@ -86,8 +86,8 @@ function createVisualization(json) {
 // Fade all but the current sequence, and show it in the breadcrumb trail.
 function mouseover(d) {
 
-  var percentage = (100 * d.value / totalSize).toPrecision(3);
-  var percentageString = percentage + "%";
+  var percentage = (100 * d.value / totalSize).toPrecision(2);
+  var percentageString = d.value + " " + percentage + "%";
   if (percentage < 0.1) {
     percentageString = "< 0.1%";
   }
@@ -150,14 +150,19 @@ function getAncestors(node) {
 
 function initializeBreadcrumbTrail() {
   // Add the svg area.
+//  var trail = d3.select("#sequence")
+//              .append("svg:text")
+//              .attr("id", "endlabel")
   var trail = d3.select("#sequence").append("svg:svg")
+      .attr("id", "trail")
       .attr("width", width)
-      .attr("height", 50)
-      .attr("id", "trail");
+      .attr("height", 50);
+     // .attr("id", "trail");
+  //  .attr("id", "trail");
   // Add the label at the end, for the percentage.
-  trail.append("svg:text")
-    .attr("id", "endlabel")
-    .style("fill", "#000");
+  //trail.append("svg:text")
+  //  .attr("id", "endlabel")
+  //  .style("fill", "#000");
 }
 
 // Generate a string that describes the points of a breadcrumb polygon.
@@ -185,20 +190,22 @@ function updateBreadcrumbs(nodeArray, percentageString) {
   // Add breadcrumb and label for entering nodes.
   var entering = g.enter().append("svg:g");
 
-  entering.append("svg:polygon")
-      .attr("points", breadcrumbPoints)
-      .style("fill", function(d) { return colors[d.name]; });
+//  entering.append("svg:polygon")
+  //    .attr("points", breadcrumbPoints)
+    //  .style("fill", 'black');//function(d) { return colors[d.name]; });
 
   entering.append("svg:text")
       .attr("x", (b.w + b.t) / 2)
       .attr("y", b.h / 2)
-      .attr("dy", "0.35em")
+      .attr("dy", "0.3em")
       .attr("text-anchor", "middle")
+      .attr('style', 'fill: rgb(0,0,0);')
       .text(function(d) { return d.name; });
-
+      
   // Set position for entering and updating nodes.
   g.attr("transform", function(d, i) {
-    return "translate(" + i * (b.w + b.s) + ", 0)";
+//    return "translate(" + i * (b.w + b.s) + ", 0)";
+    return "translate(15," + i * 15 + ")";
   });
 
   // Remove exiting nodes.
