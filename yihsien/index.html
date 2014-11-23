@@ -90,7 +90,7 @@ d3.json("tester.json", function(error, root) {
     .html(function(d) { return d.name; });
   */
 
-  zoom(p.parent, p);
+  zoom(p, p);
 
   function zoomIn(p) {
     if (p.depth > 1) p = p.parent;
