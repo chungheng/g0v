@@ -1,8 +1,10 @@
 !function(){
 	var bP={};	
-	var b=30, bb=150, height=600, buffMargin=1, minHeight=14;
-	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140]; //Column positions of labels.
-	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#0099C6"];
+	var b=40, bb=240, height=600, buffMargin=1, minHeight=14;
+//	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140];
+    var c1=[-130, 60], c2=[-10, 220], c3=[-10, 240];
+    //Column positions of labels.
+	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#00FFFF","#FF69B4", "#FFD700","#00FF00", "#9370DB" ];
 	
 	bP.partData = function(data,p){
 		var sData={};
@@ -130,7 +132,7 @@
 			
 		mainbar.append("text").attr("class","barpercent")
 			.attr("x", c3[p]).attr("y",function(d){ return d.middle+5;})
-			.text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;})
+			//.text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;})
 			.attr("text-anchor","end").style("fill","grey");
 			
 		d3.select("#"+id).select(".part"+p).select(".subbars")
@@ -138,7 +140,7 @@
 			.append("rect").attr("class","subbar")
 			.attr("x", 0).attr("y",function(d){ return d.y})
 			.attr("width",b).attr("height",function(d){ return d.h})
-			.style("fill",function(d){ return colors[d.key1];});
+			.style("fill",function(d){ return colors[d.key1 % 10];});
 	}
 	
 	function drawEdges(data, id){
@@ -146,7 +148,7 @@
 
 		d3.select("#"+id).select(".edges").selectAll(".edge")
 			.data(data.edges).enter().append("polygon").attr("class","edge")
-			.attr("points", edgePolygon).style("fill",function(d){ return colors[d.key1];})
+			.attr("points", edgePolygon).style("fill",function(d){ return colors[d.key1 % 10];})
 			.style("opacity",0.5).each(function(d) { this._current = d; });	
 	}	
 	
@@ -161,7 +163,7 @@
 			h.append("text").text(header[d]).attr("x", (c1[d]-5))
 				.attr("y", -5).style("fill","grey");
 			
-			h.append("text").text("Count").attr("x", (c2[d]-10))
+			h.append("text").text("金額").attr("x", (c2[d]-40))
 				.attr("y", -5).style("fill","grey");
 			
 			h.append("line").attr("x1",c1[d]-10).attr("y1", -2)
@@ -190,7 +192,7 @@
 			
 		mainbar.select(".barpercent").transition().duration(500)
 			.attr("y",function(d){ return d.middle+5;})
-			.text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;});
+			//.text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;});
 			
 		d3.select("#"+id).select(".part"+p).select(".subbars")
 			.selectAll(".subbar").data(data.subBars[p])
