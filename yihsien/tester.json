@@ -26,20 +26,20 @@
     "children": [
     {
       "name": "宣傳",
-      "children": "金額": [
+      "children": [
       {"name": "1340000", "size": 10},
       {"name": "1235000", "size": 9},
       {"name": "1340000", "size": 10},
       {"name": "1235000", "size": 9},
       {"name": "1340000", "size": 10},
-      {"name": "1235000", "size": 9},
+      {"name": "1235000", "size": 9}
       ]
     },
     {
       "name": "辦公器材",
       "children": [
       {"name": "1340000", "size": 10},
-      {"name": "1235000", "size": 9},
+      {"name": "1235000", "size": 9}
       ]
     }
     ]
