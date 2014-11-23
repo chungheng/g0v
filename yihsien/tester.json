@@ -2,7 +2,7 @@
   "name": "丁守中",
   "children": [
   {
-    "name": "政治獻金",
+    "name": "政治獻金", "size": 99,
     "children": [
     {
       "name": "中華電信",
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "name": "選舉支出",
+    "name": "選舉支出", "size": 1,
     "children": [
     {
       "name": "宣傳",
