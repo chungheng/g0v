@@ -134,6 +134,10 @@ d3.json("tester.json", function(error, root) {
     // Exiting outside arcs transition to the new layout.
     if (root !== p) enterArc = insideArc, exitArc = outsideArc, outsideAngle.range([p.x, p.x + p.dx]);
     
+    var text = svg.selectAll("text")
+      .data(partition.nodes(root).slice(1))
+    
+    
     d3.transition().duration(d3.event.altKey ? 7500 : 750).each(function() {
       path.exit().transition()
           .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
@@ -152,8 +156,7 @@ d3.json("tester.json", function(error, root) {
 
     });
     
-    var text = svg.selectAll("text")
-      .data(partition.nodes(root).slice(1))
+
 
     text.exit().transition()
       .style("fill-opacity", function(d) { return d.depth === 1 + (root === p) ? 1 : 0; })
