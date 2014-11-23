@@ -22,9 +22,9 @@
           <nav id="topbar" class="site-topbar visible-lg visible-md">
             <div class="container">
               <div class="row">
-                <div class="col-sm-6">Visual Congress<sup>beta</sup> 視覺立法</div>
+                <div class="col-sm-6">g0v - Visual Congress<sup>beta</sup> 零時政府</div>
                 <div class="social-links col-sm-6">
-                  <a href="https://www.facebook.com/PlatoForum" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                  <a href="https://www.facebook.com/g0v" target="_blank"><i class="fa fa-facebook-square"></i></a>
                 </div>
               </div>
             </div>
@@ -42,12 +42,28 @@
               <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul id="navigation" class="nav navbar-nav navbar-right">
                   <li class="active"><a href="#header" class="current">起點</a></li>
-                  <li><a href="#one-by-one">One-by-One</a></li>
-                  <li><a href="#bi-partite">Bi-Partite</a></li>
+                  <li><a href="#one-by-one">逐一檢視</a></li>
+                  <li><a href="#bi-partite">橫向比較</a></li>
                 </ul>
               </div>
             </div>
           </nav>
+        <style>
+            .round {
+                border-radius: 50%;
+                overflow: hidden;
+                width: 80px;
+                height: 80px;
+            }
+            .round img {
+                display: block;
+		/*
+                height: 100%;
+                width: 100%;*/
+                min-width: 100%;
+                min-height: 100%;
+            }
+        </style>
         </header>
 
         <main id="main" class="site-main">
@@ -60,7 +76,7 @@
               </div>
               <div class="item" style="background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%AB%8B%E6%B3%95%E9%99%A2_%28%E8%AD%B0%E5%A0%B4%E5%86%85%29_Legislative_Yuan_of_the_Republic_of_China_%28chamber%2C_interior%29.jpg/1024px-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%AB%8B%E6%B3%95%E9%99%A2_%28%E8%AD%B0%E5%A0%B4%E5%86%85%29_Legislative_Yuan_of_the_Republic_of_China_%28chamber%2C_interior%29.jpg); background-position:center; background-size:120% auto;">
                 <div class="container">
-                  <h1 class="text-white "><i class="fa fa-comments fa-2x"></i> <strong>獨特機制</strong></h1>
+                  <h1 class="text-white "><i class="fa fa-comments fa-2x"></i> <strong>概括呈現</strong></h1>
                 </div>
               </div>
               <div class="item" style="background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/%E7%AB%8B%E6%B3%95%E9%99%A2.JPG/1024px-%E7%AB%8B%E6%B3%95%E9%99%A2.JPG); background-position:center; background-size:120% auto;">
@@ -85,51 +101,78 @@
               <section id="one-by-one" class="section section-center section-hilite section-pricing">
                 <span class="anchor" id="features_anchor"></span>
                 <div class="container">
-                  <h2 class="section-title"><span><i class="fa fa-comments fa-2x"></i> 立委名單 </span></h2>
-                  <div class="pricing-table">
+
+                  <h2 class="section-title"><span><i class="fa fa-comments fa-2x"></i> 放大檢視 </span></h2>
                     <div class="row">
-                      <div class="col-md-3 col-sm-6">
-                        <div class="panel panel-primary">
-                          <header class="panel-heading">
-                            <h1>費鴻泰</h1>
-                          </header>
-                          <div class="panel-body">
-                            <img src=./images/download.jpg>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 col-sm-6">
-                        <div class="panel panel-primary">
-                          <header class="panel-heading">
-                            <h1>丁守中</h1>
-                          </header>
-                          <div class="panel-body">
-                            <img src=./images/download.jpg>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 col-sm-6">
-                        <div class="panel panel-primary">
-                          <header class="panel-heading">
-                            <h1>蔡正元</h1>
-                          </header>
-                          <div class="panel-body">
-                            <img src=./images/download.jpg>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 col-sm-6">
-                        <div class="panel panel-primary">
-                          <header class="panel-heading">
-                            <h1>蔡正元</h1>
-                          </header>
-                          <div class="panel-body">
-                            <img src=./images/download.jpg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/61001.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80014.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80085.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80054.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80048.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80025.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80036.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/81081.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80011.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/81091.jpg" />
+                      </div></div>
+
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/81005.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80006.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80110.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/61189.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80097.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/81093.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/71113.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80106.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80073.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80104.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80108.jpg" />
+                      </div></div>
+                      <div class="col-md-1"><div class="round" float="left">
+                        <img scaling=0.7 align="center" src="http://www.ly.gov.tw/upload/01_introduce/0103_leg/LGpicture/80076.jpg" />
+                      </div></div>
                   </div>
+		  <iframe src="../pie_chart/01/01.html"></iframe>
                 </div>
               </section>
 
@@ -137,11 +180,8 @@
           <section id="bi-partite" class="section section-center section-cta">
             <div class="container">
               <h2 class="section-title"><span><i class="fa fa-comments fa-2x"></i> 橫向比較 <sub>一目了然</sup></span></h2>
-                Intutive | Elegent</p>
                 <div class="row">
-                      <div class="col-md-3 col-sm-6" id="bipart-1">
-                      </div>
-                      <div class="col-md-3 col-sm-6" id="bipart-2">
+                      <div class="col-md-3 col-sm-6" id="bipart-1" align="center">
                       </div>
 
               </div>
