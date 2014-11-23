@@ -1,14 +1,15 @@
 {
-  "name": "政治獻金",
+  "name": "丁守中",
   "children": [
   {
-    "name": "丁守中",
+    "name": "政治獻金",
     "children": [
-    {"name": "捐贈者", "size": 1234}
+    {"name": "中華電信", "size": 10},
+    {"name": "統一集團", "size": 30} 
     ]
-  },
-  { "name": "whatever",
-    "size": 20
   }
+  //{ "name": "whatever",
+    //"size": 20
+  //}
   ]
 }
