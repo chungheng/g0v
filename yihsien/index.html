@@ -173,6 +173,11 @@ function arcTween(b) {
   };
 }
 
+function computeTextRotation(d) {
+  return (d.x + (d.dx)/2) * 180 / Math.PI - 90;
+}
+
+
 function updateArc(d) {
   return {depth: d.depth, x: d.x, dx: d.dx};
 }
