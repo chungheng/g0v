@@ -1,0 +1,10 @@
+{
+  "name": "政治獻金",
+  "children": [
+  {
+    "name": "丁守中",
+    "children": [
+    {"name": "捐贈者", "size": 1234}
+    ]
+  }
+}
