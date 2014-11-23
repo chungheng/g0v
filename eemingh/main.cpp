@@ -11,7 +11,23 @@ int main () {
 	ofstream out_file;
 	out_file.open("JNS_out.json");
 	while (getline(in_file, line)) {
-		out_file << line << endl;
+		string str_num;
+		int count = 0;
+		for (int i = 0; i < line.length()-1; ++i) {
+			if (line[i] == ','){
+				for (int j = i; j<line.length(); ++j) {
+					if (line[j] == ',') {
+						str_num = line.substr(i, j-i);
+						count++;
+						break;
+					}
+				}
+			}
+			if (count == 1) {
+				break;
+			}
+		}
+		out_file << str_num << endl;
 	}
 	
 	in_file.close();
