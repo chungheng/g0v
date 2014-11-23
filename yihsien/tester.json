@@ -4,8 +4,14 @@
   {
     "name": "政治獻金",
     "children": [
-    {"name": "中華電信", "size": 10},
-    {"name": "統一集團", "size": 30} 
+    {
+     "name": "中華電信", "size": 10
+     "children": "1500000", "size": 22 
+    },
+    {
+     "name": "統一集團", "size": 30
+     "name": "1340000", "size": 15
+    } 
     ]
   },
   {
